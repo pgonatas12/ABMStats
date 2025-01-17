@@ -92,3 +92,34 @@ shapiro.test(abm_impute$whites)
 var.test(impute_bact$whites,impute_vir$whites)
 #F = 15.01, num df = 295, denom df = 284, p-value < 2.2e-16
 
+#Data doesn't follow normal dist, so let's try a non-parametric method
+
+wilcox.test(impute_bact$wbc,impute_vir$wbc)
+#W = 60400, p-value < 2.2e-16
+
+wilcox.test(impute_bact$bloodgl,impute_vir$bloodgl)
+#W = 58132, p-value = 3.248e-15
+
+wilcox.test(impute_bact$pmn,impute_vir$pmn)
+#W = 36553, p-value = 0.005291
+
+wilcox.test(impute_bact$gl,impute_vir$gl)
+#W = 21742, p-value < 2.2e-16
+
+wilcox.test(impute_bact$reds,impute_vir$reds)
+#W = 52510, p-value = 3.306e-07
+
+wilcox.test(impute_bact$whites,impute_vir$whites)
+#W = 67030, p-value < 2.2e-16
+
+#While t-test doesn't fit here, Wilcox Signed Rank Test gives us similar results.
+#There is significant evidence that Bacterial Meng has different effects than viral infections
+
+
+
+
+
+#Now let's try with removing nulls from the data
+
+
+
